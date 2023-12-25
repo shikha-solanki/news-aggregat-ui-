@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Aggregator </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="download.png" alt="company logos">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-links nav-item" id="IPL">IPL</li>
+                    <li class="hover-links nav-item active" id="Finance">Finance</li>
+                    <li class="hover-links nav-item" id="Politics">Politics</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input type="text" class="news-input" id="search-text" placeholder="Science">
+                <button id="search-button" class="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="cards-container container flex">
+            <!-- News cards will go here -->
+        </div>
+    </main>
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 class="news-title" id="news-title">This is the title</h3>
+                <h6 class="news-source" id="news-source">End gadget 25/11/2023</h6>
+                <p class="news-desc" id="news-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quas modi optio doloribus
+                    officia nesciunt fugit ducimus aut repudiandae sapiente.
+                </p>
+            </div>
+        </div>
+    </template>
+    <script src="/script.js"></script>
+    <script>
+        function reload() {
+            window.location.reload();
+        }
+
+        document.getElementById('IPL').addEventListener('click', () => onNavItemClick('IPL'));
+        document.getElementById('Finance').addEventListener('click', () => onNavItemClick('Finance'));
+        document.getElementById('Politics').addEventListener('click', () => onNavItemClick('Politics'));
+    </script>
+</body>
+</html>
